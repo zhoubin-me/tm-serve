@@ -1,0 +1,14 @@
+[project]
+name = "tm-serve"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.12",
+    "flashinfer-python==0.2.2",
+    "openai>=1.68.2",
+    "pydantic>=2.10.6",
+    "uvicorn>=0.34.0",
+    "vllm>=0.8.1",
+]
