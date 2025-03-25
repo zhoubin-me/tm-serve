@@ -16,7 +16,7 @@ guide = {
     'required': ['wordsInMark', 'chineseCharacter', 'descrOfDevice']
 }
 
-response_format=dict(type='json_schema',  json_schema=dict(name='test',schema=guide))
+response_format=dict(type='json_schema',  json_schema=dict(name='tm_query',schema=guide))
 
 app = FastAPI()
 
