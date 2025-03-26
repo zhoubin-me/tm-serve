@@ -108,6 +108,7 @@ The Trademark Indexing AI System follows a microservices architecture with two m
 2. Build the Docker image:
    ```bash
    docker build -t tm-serve:latest .
+   chmod +x startup.sh
    ```
 This step may take a few minutes as it will download my finetuned model ```bzhouxyz/internvl-2d5-4B-lora-ft-tm``` from huggingface
 
