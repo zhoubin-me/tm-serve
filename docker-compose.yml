@@ -9,7 +9,6 @@ services:
       - "8000:8000"
     privileged: true
     volumes:
-      - $HOME/.cache:/root/.cache
       - ./startup.sh:/startup.sh
     environment:
       - DISPLAY=${DISPLAY}

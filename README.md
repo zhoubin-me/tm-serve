@@ -30,7 +30,8 @@ This project implements an AI-powered trademark indexing system for GovTech Sing
    docker-compose up
    ```
 
-You may need to wait for around 1 min for /invoke service be ready.
+You may need to wait for a few minutes for all services to be ready, as it will download my finetuned models from huggingface.
+You may check ```startup.sh``` for details.
 
 ## API Usage
 
