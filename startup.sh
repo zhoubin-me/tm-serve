@@ -1,4 +1,5 @@
 #!/bin/bash
+uv run huggingface-cli download bzhouxyz/internvl-2d5-4B-lora-ft-tm
 
 # Start vllm server in the background
 uv run vllm serve bzhouxyz/internvl-2d5-4B-lora-ft-tm --gpu-memory-utilization 0.5 &
