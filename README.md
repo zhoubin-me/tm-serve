@@ -26,6 +26,7 @@ The Trademark Indexing AI System follows a microservices architecture with two m
    - **Multimodal Capabilities**: Provides strong vision-language understanding
    - **Parameter-Efficient Fine-tuning**: LoRA adaptation enables cost-effective domain adaptation
    - **Size/Performance Balance**: 4B parameter model balances quality and resource requirements
+   - **Strong base model**: Original InternVL 2.5 4B has recall around **72.9%** for Chinese trademark OCR without finetuning; after finetuning will reach **84.1%**
 
 2. **Inference Optimization with VLLM**:
    - **Continuous Batching**: Improves throughput for concurrent requests
@@ -39,13 +40,17 @@ The Trademark Indexing AI System follows a microservices architecture with two m
 
 ### Solution Selection Rationale and Alternatives
 
-1. **Model Selection**:
+**Model Selection**:
    - **Selected**: InternVL 2.5 4B with LoRA fine-tuning, strong base model, end to end model for this solution
    - **Considered Alternatives**:
      - **CLIP**: Effective for image embeddings but has limitations in text generation
      - **GOT-OCR 2.0**: More suitable for document understanding, but not optimal for trademark OCR
-     - **paddleocr**: lightwight model for OCR only, but its performance is not as strong as VLM models for trademarks.
+     - **PaddleOCR**: lightwight model for OCR only, but its performance is not as strong as VLM models for trademarks.
 
+**Inference Infrastructure Selection**:
+   - **Selected**: vLLM, easy deployment, minimal bugs, support structured output
+   - **Considered Alternatives**:
+      - **LMDeploy**: Support TurboMind inference engine, faster concurrency, but structured output has bugs.
 
 ### Scaling Considerations and Limitations
 
@@ -58,6 +63,8 @@ The Trademark Indexing AI System follows a microservices architecture with two m
    - **Language Support**: Optimized primarily for English and Chinese text
    - **Image Quality Dependency**: Performance degrades with low-resolution or highly stylized text
    - **Complex Trademarks**: May struggle with intricate logos or ambiguous symbols
+   - **Repeating response**: May have repeating response, need limit max response token.
+   - **Traditional Chinese & Japanese Kanzi**: Trademark may have traditional Chinese and Japanese kanzi, need conversion to Simplified Chinese for indexing.
    - **Scaling Costs**: Linear cost scaling with GPU resources
 
 
