@@ -8,8 +8,6 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 RUN echo "source /root/.local/bin/env" >> /root/.bashrc
 
-ENV PATH="/root/.local/bin:$PATH"
-
 RUN mkdir -p /workspace
 
 WORKDIR /workspace
@@ -17,5 +15,7 @@ WORKDIR /workspace
 RUN git clone https://github.com/zhoubin-me/tm-serve.git
 
 WORKDIR /workspace/tm-serve
+
+ENV PATH="/root/.local/bin:$PATH"
 
 RUN uv sync

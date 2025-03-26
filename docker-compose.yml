@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  app:
+    image: zhoubinxyz/tm-serve:latest
+    container_name: bzhou_ubuntu
+    ports:
+      - "1234:1234"
+      - "8000:8000"
+    privileged: true
+    volumes:
+      - $HOME/.cache:/root/.cache
+      - ./startup.sh:/startup.sh
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - TERM=xterm-256color
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    command: /startup.sh
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge
