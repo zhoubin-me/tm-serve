@@ -59,6 +59,7 @@ def invoke_model(request: InferenceRequest):
                 }
             ],
             response_format=response_format,
+            max_tokens=128,
             temperature=0.1,
             top_p=0.9)
 
