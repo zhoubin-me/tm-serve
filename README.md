@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements an AI-powered trademark indexing system for GovTech Singapore's Multimodal AI Team. The system automates the extraction and processing of text from trademark images, generating structured indexing data for both English and Chinese text, and providing trademark descriptions.
+This project implements an AI-powered trademark indexing system. The system automates the extraction and processing of text from trademark images, generating structured indexing data for both English and Chinese text, and providing trademark descriptions.
 
 ## Solution Architecture
 
