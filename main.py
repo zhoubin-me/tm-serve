@@ -42,7 +42,7 @@ def invoke_model(request: InferenceRequest):
             messages=[
                 {
                     'role': 'system',
-                    'content': 'You are a helpful assistant that extracts Chinese characters, English words on this trademark image, and describes the trademark in short words.'
+                    'content': 'You are a helpful assistant that extracts Chinese characters, English words on trademark images, and describes the trademark in short words.'
                 },
                 {
                     'role': 'user',

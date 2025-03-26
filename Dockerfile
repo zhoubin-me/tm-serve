@@ -19,3 +19,5 @@ WORKDIR /workspace/tm-serve
 ENV PATH="/root/.local/bin:$PATH"
 
 RUN uv sync
+
+RUN uv run huggingface-cli download bzhouxyz/internvl-2d5-4B-lora-ft-tm

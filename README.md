@@ -6,12 +6,6 @@ This project implements an AI-powered trademark indexing system for GovTech Sing
 
 ## Installation
 
-### Prerequisites
-
-- Docker
-- NVIDIA GPU with CUDA support (for GPU inference) or CPU with 8+ cores
-- 16GB+ RAM
-
 ### Setup Instructions
 
 1. Clone the repository:
@@ -24,14 +18,14 @@ This project implements an AI-powered trademark indexing system for GovTech Sing
    ```bash
    docker build -t tm-serve:latest .
    ```
+This step may take a few minutes as it will download my finetuned model ```bzhouxyz/internvl-2d5-4B-lora-ft-tm``` from huggingface
 
 3. Run the container:
    ```bash
    docker-compose up
    ```
 
-You may need to wait for a few minutes for all services to be ready, as it will download my finetuned models from huggingface.
-You may check ```startup.sh``` for details.
+You may need to wait for a few minutes for all services to be ready.
 
 ## API Usage
 
